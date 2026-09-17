@@ -1,4 +1,4 @@
-module Main(
+module Main2(
     input  [17:0] SW,
     output [17:0] LEDR,
     output [2:0]  LEDG,
@@ -51,32 +51,22 @@ module Main(
 
     // PART IV
 
-    //char_7seg D0(
-        //.C(SW[2:0]),
-        //.Display(HEX0)
-    //);
+    char_7seg D0(
+        .C(SW[2:0]),
+        .Display(HEX0)
+    );
 
 
-    // PART V
+    // PART VI
 
-    part5 P5(
+    part6 P6(
         .SW(SW),
         .HEX0(HEX0),
         .HEX1(HEX1),
         .HEX2(HEX2),
         .HEX3(HEX3),
-        .HEX4(HEX4)
-    );
-	// PART VI
-
-    //part6 P6(
-        //.SW(SW),
-        //.HEX0(HEX0),
-        //.HEX1(HEX1),
-        //.HEX2(HEX2),
-        //.HEX3(HEX3),
-        //.HEX4(HEX4),
-        //.HEX5(HEX5)
+        .HEX4(HEX4),
+        .HEX5(HEX5)
     );
 
 endmodule
