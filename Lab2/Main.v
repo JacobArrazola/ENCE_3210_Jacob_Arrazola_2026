@@ -1,19 +1,19 @@
 module Main(
     // Pinout Assignment
-//    input  [9:0] SW,
-//    output [9:0] LEDR,
-//    output [7:0] HEX0,
-//    output [7:0] HEX1,
-//    output [7:0] HEX2,
-//    output [7:0] HEX3,
-//    output [7:0] HEX4,
-//    output [7:0] HEX5
-//);
+    input  [9:0] SW,
+    output [9:0] LEDR,
+    output [7:0] HEX0,
+    output [7:0] HEX1,
+    output [7:0] HEX2,
+    output [7:0] HEX3,
+    output [7:0] HEX4,
+    output [7:0] HEX5
+);
 
 	  // Part I
 	  
     // Connect switches to LEDs
-    //assign LEDR[9:0] = SW[9:0];
+    assign LEDR[9:0] = SW[9:0];
 
 	 
 	 // PART II
@@ -248,18 +248,18 @@ module Main(
 	 
 	 // PART V
 	 // Comment out lines 3-11
-	 input  [15:0] SW,
-    output [15:0] LEDR,
-
-    output [7:0] HEX0,
-    output [7:0] HEX1,
-    output [7:0] HEX2,
-    output [7:0] HEX3,
-    output [7:0] HEX4,
-    output [7:0] HEX5,
-    output [7:0] HEX6,
-    output [7:0] HEX7
-);
+//	 input  [15:0] SW,
+//    output [15:0] LEDR,
+//
+//    output [7:0] HEX0,
+//    output [7:0] HEX1,
+//    output [7:0] HEX2,
+//    output [7:0] HEX3,
+//    output [7:0] HEX4,
+//    output [7:0] HEX5,
+//    output [7:0] HEX6,
+//    output [7:0] HEX7
+//);
 
 //    // Show switches on LEDs
 //
@@ -354,81 +354,81 @@ module Main(
 	 
 	 // PART VI
 	 // Comment out 264-353
-	wire [3:0] A1;
-	wire [3:0] A0;
-	wire [3:0] B1;
-	wire [3:0] B0;
-
-	wire [3:0] S0;
-	wire [3:0] S1;
-	wire S2;
-
-	// SWITCHES
-
-	assign A1 = SW[15:12];
-	assign A0 = SW[11:8];
-
-	assign B1 = SW[7:4];
-	assign B0 = SW[3:0];
-
-	// TWO-DIGIT BCD ADDER
-
-	BCD_Adder_Algorithm BCD0(
-		 .A0(A0),
-		 .A1(A1),
-		 .B0(B0),
-		 .B1(B1),
-		 .S0(S0),
-		 .S1(S1),
-		 .S2(S2)
-	);
-	
-	// 7-SEGMENT DISPLAYS
-
-	// Ones digit
-	Seg7_Decoder D0(
-		 .m(S0),
-		 .out(HEX0)
-	);
-
-	// Tens digit
-	Seg7_Decoder D1(
-		 .m(S1),
-		 .out(HEX1)
-	);
-
-	// Hundreds digit
-	Seg7_Decoder D2(
-		 .m({3'b000, S2}),
-		 .out(HEX2)
-	);
-
-	// DISPLAY INPUT A
-
-	Seg7_Decoder DA1(
-		 .m(A1),
-		 .out(HEX7)
-	);
-
-	Seg7_Decoder DA0(
-		 .m(A0),
-		 .out(HEX6)
-	);
-
-	// DISPLAY INPUT B
-
-	Seg7_Decoder DB1(
-		 .m(B1),
-		 .out(HEX5)
-	);
-
-	Seg7_Decoder DB0(
-		 .m(B0),
-		 .out(HEX4)
-	);
-
-	// UNUSED DISPLAY
-
-	assign HEX3 = 8'b11111111;
+//	wire [3:0] A1;
+//	wire [3:0] A0;
+//	wire [3:0] B1;
+//	wire [3:0] B0;
+//
+//	wire [3:0] S0;
+//	wire [3:0] S1;
+//	wire S2;
+//
+//	// SWITCHES
+//
+//	assign A1 = SW[15:12];
+//	assign A0 = SW[11:8];
+//
+//	assign B1 = SW[7:4];
+//	assign B0 = SW[3:0];
+//
+//	// TWO-DIGIT BCD ADDER
+//
+//	BCD_Adder_Algorithm BCD0(
+//		 .A0(A0),
+//		 .A1(A1),
+//		 .B0(B0),
+//		 .B1(B1),
+//		 .S0(S0),
+//		 .S1(S1),
+//		 .S2(S2)
+//	);
+//	
+//	// 7-SEGMENT DISPLAYS
+//
+//	// Ones digit
+//	Seg7_Decoder D0(
+//		 .m(S0),
+//		 .out(HEX0)
+//	);
+//
+//	// Tens digit
+//	Seg7_Decoder D1(
+//		 .m(S1),
+//		 .out(HEX1)
+//	);
+//
+//	// Hundreds digit
+//	Seg7_Decoder D2(
+//		 .m({3'b000, S2}),
+//		 .out(HEX2)
+//	);
+//
+//	// DISPLAY INPUT A
+//
+//	Seg7_Decoder DA1(
+//		 .m(A1),
+//		 .out(HEX7)
+//	);
+//
+//	Seg7_Decoder DA0(
+//		 .m(A0),
+//		 .out(HEX6)
+//	);
+//
+//	// DISPLAY INPUT B
+//
+//	Seg7_Decoder DB1(
+//		 .m(B1),
+//		 .out(HEX5)
+//	);
+//
+//	Seg7_Decoder DB0(
+//		 .m(B0),
+//		 .out(HEX4)
+//	);
+//
+//	// UNUSED DISPLAY
+//
+//	assign HEX3 = 8'b11111111;
 	 
 endmodule
