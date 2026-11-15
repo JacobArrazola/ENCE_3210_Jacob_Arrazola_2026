@@ -1,0 +1,25 @@
+# Quartus generated files
+**/db/
+**/incremental_db/
+**/output_files/
+**/simulation/
+**/greybox_tmp/
+
+# Quartus temporary files
+*.qws
+*.qdf
+*.rpt
+*.summary
+*.smsg
+*.done
+*.jdi
+*.sof
+*.pof
+*.rbf
+*.jic
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+*.bak
+*.swp
